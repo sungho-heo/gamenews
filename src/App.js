@@ -6,7 +6,7 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}v2/everything?q=game&pageSize=10&language=en&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`
+        `${process.env.REACT_APP_API_URL}/everything?q=Game&pageSize=20&language=en&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`
       );
       const data = response.data;
       const gameArray = data.articles;
@@ -16,12 +16,20 @@ function App() {
   }, [gameNews]);
   return (
     <div className="App">
-      <h2>Hello</h2>
+      <h1>Hello Welcome to Game News! Popularity 10</h1>
       {gameNews.length > 0 ? (
         gameNews.map((news, index) => (
           <div key={index}>
-            <h3>{news.title}</h3>
-            <span>{news.author}</span>
+            <h2>{news.title}</h2>
+            <p>
+              {new Date(news.publishedAt).toLocaleString("en-us", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+            <img src={news.urlToImage} alt={news.title} />
+            <p>{news.author}</p>
             <span>{news.description}</span>
           </div>
         ))
