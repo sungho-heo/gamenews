@@ -15,27 +15,30 @@ function App() {
     getData();
   }, [gameNews]);
   return (
-    <div className="App">
-      <h1>Hello Welcome to Game News! Popularity 10</h1>
-      {gameNews.length > 0 ? (
-        gameNews.map((news, index) => (
-          <div key={index}>
-            <h2>{news.title}</h2>
-            <p>
+    <div className={"container"}>
+      <h1>Hello Welcome to Game News! Popularity 20</h1>
+      <div className={"gameNews"}>
+        {gameNews.length > 0 ? (
+          gameNews.map((news, index) => (
+            <div key={index} className={"news"}>
+              {/* <p>
               {new Date(news.publishedAt).toLocaleString("en-us", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })}
-            </p>
-            <img src={news.urlToImage} alt={news.title} />
-            <p>{news.author}</p>
+            </p> */}
+              <img src={news.urlToImage} alt={news.title} className={"img"} />
+              <p>{news.title}</p>
+              {/* <p>{news.author}</p>
             <span>{news.description}</span>
-          </div>
-        ))
-      ) : (
-        <h3>Loading...</h3>
-      )}
+            <p src={news.url}>{news.url}</p> */}
+            </div>
+          ))
+        ) : (
+          <h3>Loading...</h3>
+        )}
+      </div>
     </div>
   );
 }
