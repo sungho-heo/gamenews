@@ -27,7 +27,9 @@ export default function Home() {
                 day: "numeric",
               })}
             </p> */}
-            <img src={news.urlToImage} alt={news.title} className={"img"} />
+            <Link to={`/news/${index}`}>
+              <img src={news.urlToImage} alt={news.title} className={"img"} />
+            </Link>
             <p>{news.title}</p>
             {/* <p>{news.author}</p>
             <span>{news.description}</span>
