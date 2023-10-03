@@ -7,8 +7,8 @@ export default function News({ gameNews }) {
   return (
     <div>
       <h1 className={style.title}>{gameNews[id].title}</h1>
-      <div>
-        <div className={style.main}>
+      <div className={style.newsBox}>
+        <div className={style.newsMain}>
           <img
             src={gameNews[id].urlToImage}
             alt={gameNews[id].title}
