@@ -9,11 +9,6 @@ export default function News({ gameNews }) {
       <h1 className={style.title}>{gameNews[id].title}</h1>
       <div className={style.newsBox}>
         <div className={style.newsMain}>
-          <img
-            src={gameNews[id].urlToImage}
-            alt={gameNews[id].title}
-            className={style.detailImage}
-          />
           <p>
             {new Date(gameNews[id].publishedAt).toLocaleString("en-us", {
               year: "numeric",
@@ -21,6 +16,11 @@ export default function News({ gameNews }) {
               day: "numeric",
             })}
           </p>
+          <img
+            src={gameNews[id].urlToImage}
+            alt={gameNews[id].title}
+            className={style.detailImage}
+          />
           <p>{gameNews[id].author}</p>
           <span>{gameNews[id].description}</span>
           <br />
