@@ -22,14 +22,22 @@ function App() {
       setGameNews(gameArray);
     };
     getData();
-  }, [gameNews]);
+  }, []);
   return (
     <div className={"container"}>
       <Router>
-        <h1>Hello Welcome to Game News! Popularity 20</h1>
-        <h3>
-          <Link to="/">Home</Link>
-        </h3>
+        <header className={"header"}>
+          <div className={"home"}>
+            <h3>
+              <Link className={"link"} to="/">
+                Home
+              </Link>
+            </h3>
+          </div>
+          <h3 className={"homeTitle"}>
+            Hello Welcome to Game News! Popularity 20
+          </h3>
+        </header>
         <Routes>
           <Route path="/" element={<Home gameNews={gameNews} />}></Route>
           <Route

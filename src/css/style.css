@@ -1,6 +1,7 @@
 body {
-  background-color: #1a1a2b;
+  background-color: black;
   color: white;
+  padding-top: 100px;
 }
 .img {
   border-radius: 30px;
@@ -30,7 +31,34 @@ body {
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
-  background-color: #36364d;
+  background-color: #1a1a2b;
   overflow: hidden;
   text-align: center;
+}
+
+.link {
+  color: white;
+  text-decoration: unberline;
+}
+
+.header {
+  display: grid;
+  padding: 1rem;
+  font-weight: bold;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 10px;
+  background-color: #1a1a2b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.home {
+  display: flex;
+}
+
+.homeTitle {
+  display: flex;
+  justify-content: center;
 }
